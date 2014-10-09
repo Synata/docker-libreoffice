@@ -3,6 +3,8 @@ FROM dockerfile/java
 
 MAINTAINER Patrick White (pat.white@synata.com) Version: 0.1
 
-RUN apt-get update && apt-get install -y libreoffice && apt-get install -y imagemagick 
+RUN add-apt-repository -y ppa:dhor/myway
+
+RUN apt-get update && apt-get install -y libreoffice && apt-get install -y imagemagick && apt-get install -y graphicsmagick
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
